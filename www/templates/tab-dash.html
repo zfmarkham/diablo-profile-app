@@ -1,0 +1,12 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <div class="list card" ng-repeat="hero in profile.heroes | orderBy: orderBy('last-updated'):true">
+            <div class="item item-divider">{{hero.name}}</div>
+            <div class="item item-avatar">
+                <img ng-src="img/{{hero.class}}{{hero.gender}}.png">
+                <p>Seasonal? : <i ng-class="{{hero.seasonal}} ? 'icon ion-checkmark-round' : 'icon ion-close-round'"></i></p>
+                <p>Hardcore? : <i ng-class="{{hero.hardcore}} ? 'icon ion-checkmark-round' : 'icon ion-close-round'"></i></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

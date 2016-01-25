@@ -14,17 +14,25 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('DashCtrl', function ($scope, profile) {
-    profile.success(function (data) {
-        $scope.profile = data;
+.controller('DashCtrl', function ($scope, $stateParams) {
+    //profile.success(function (data) {
+    //    $scope.profile = data;
 
-        // This is needed to circumvent the issue of a JSON property containing a hyphen
-        $scope.orderBy = function (property) {
-            return function (item) {
-                return item[property];
-            };
+    //    // This is needed to circumvent the issue of a JSON property containing a hyphen
+    //    $scope.orderBy = function (property) {
+    //        return function (item) {
+    //            return item[property];
+    //        };
+    //    };
+    //});
+
+    $scope.profile = $stateParams.profile;
+
+    $scope.orderBy = function (property) {
+        return function (item) {
+            return item[property];
         };
-    });
+    };
 })
 
 .controller('ChatsCtrl', function ($scope, Chats) {

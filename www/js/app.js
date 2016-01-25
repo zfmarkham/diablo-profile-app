@@ -45,7 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 templateUrl: 'templates/tab-dash.html',
                 controller: 'DashCtrl'
             }
-        }
+        },
+        params: {profile: null}
     })
 
     .state('tab.search', {

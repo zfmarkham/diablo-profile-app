@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 controller: 'DashCtrl'
             }
         },
-        params: {profile: null}
+        params: { profile: null, bnetId: null }
     })
 
     .state('tab.search', {
@@ -57,6 +57,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 controller: 'SearchCtrl'
             }
         }
+    })
+
+    .state('tab.hero', {
+        url: '/hero',
+        views: {
+            'main-view': {
+                templateUrl: 'templates/tab-hero.html',
+                controller: 'HeroCtrl'
+            }
+        },
+        params: { heroData: null }
     })
 
     // if none of the above states are matched, use this as the fallback
